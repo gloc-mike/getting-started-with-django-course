@@ -26,10 +26,7 @@ class UserAdmin(BaseUserAdmin):
         return format_html('<a href="{}">{} Review{}</a>', url, count, plural)
 
     def get_inline_instances(self, request, obj=None):
-        if not obj:
-            return list()
-
-        return super(UserAdmin, self).get_inline_instances(request, obj)
+        return super(UserAdmin, self).get_inline_instances(request, obj) if obj else []
 
 # Register new User admin
 admin.site.unregister(User)

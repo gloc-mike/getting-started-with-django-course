@@ -14,8 +14,9 @@ class UploadTestCase(TestCase):
 
     def setUp(self):
         super().setUp()
-        self.user = User.objects.create_user(f'testy', f'testy@example.com',
-            self.PASSWORD)
+        self.user = User.objects.create_user(
+            'testy', 'testy@example.com', self.PASSWORD
+        )
 
     def test_photo_upload(self):
         author = Author.objects.create(first_name="Bob", last_name="Loblaw",
