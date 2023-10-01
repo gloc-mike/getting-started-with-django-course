@@ -18,6 +18,6 @@ class Command(BaseCommand):
             if author.picture:
                 output.append(f' {author.picture.name}')
             else:
-                output.append(f' no picture')
+                output.append(' no picture')
 
             self.stdout.write(''.join(output))
